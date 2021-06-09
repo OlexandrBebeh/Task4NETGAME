@@ -139,11 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArrayPrinter.cpp" />
     <ClCompile Include="ArrayReader.cpp" />
+    <ClCompile Include="ArraySort.cpp" />
     <ClCompile Include="Task4NETGAME.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayPrinter.h" />
     <ClInclude Include="ArrayReader.h" />
+    <ClInclude Include="ArraySort.h" />
+    <ClInclude Include="ArrayTransformer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

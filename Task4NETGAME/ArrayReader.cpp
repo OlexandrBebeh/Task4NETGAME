@@ -26,7 +26,7 @@ std::vector<std::vector<int>> ArrayReader::readArrays() {
 						temp[arraysSize].push_back(std::stoi(str.substr(flag, i)));
 						break;
 					}
-					if( i == str.size() -1 ) temp[arraysSize].push_back(std::stoi(str.substr(flag, i)));
+					if( i == str.size() - 1) temp[arraysSize].push_back(std::stoi(str.substr(flag, i)));
 				}
 			}
 			else if (str[i] == ' ' || str[i] == ',') {
