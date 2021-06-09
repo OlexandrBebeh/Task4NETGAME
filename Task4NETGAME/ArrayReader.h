@@ -5,6 +5,7 @@
 class ArrayReader {
 	std::string filename;
 public:
+	ArrayReader() {};
 	ArrayReader(std::string name);
 	void setFilename(std::string name);
 	std::vector<std::vector<int>> readArrays();

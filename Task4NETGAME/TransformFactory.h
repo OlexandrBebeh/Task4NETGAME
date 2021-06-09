@@ -4,7 +4,8 @@
 
 enum class TransformType {
 	sort,
-	intersect
+	intersect,
+	distinct
 };
 
 

@@ -139,19 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArrayIntersection.cpp" />
-    <ClCompile Include="ArrayPrinter.cpp" />
     <ClCompile Include="ArrayReader.cpp" />
-    <ClCompile Include="ArraySort.cpp" />
     <ClCompile Include="Task4NETGAME.cpp" />
     <ClCompile Include="TransformFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArrayDistinct.h" />
     <ClInclude Include="ArrayIntersection.h" />
     <ClInclude Include="ArrayPrinter.h" />
     <ClInclude Include="ArrayReader.h" />
     <ClInclude Include="ArraySort.h" />
     <ClInclude Include="ArrayTransformer.h" />
+    <ClInclude Include="Executor.h" />
     <ClInclude Include="TransformFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

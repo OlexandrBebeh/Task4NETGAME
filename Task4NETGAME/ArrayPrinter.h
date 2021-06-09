@@ -4,7 +4,17 @@
 
 class ArrayPrinter {
 public:
-	static void print(std::vector<std::vector<int>> arr);
-
-	static void print(std::vector<int> arr);
+	template <typename  T>
+	static void printArrays(std::vector<T> arr) {
+		for (int i = 0; i < arr.size(); i++) {
+			print(arr[i]);
+		}
+	};
+	template <typename  T>
+	static void print(T arr) {
+		for (auto iter = arr.begin(); iter != arr.end(); iter++) {
+			std::cout << *iter << " ";
+		}
+		std::cout << std::endl;
+	};
 };
