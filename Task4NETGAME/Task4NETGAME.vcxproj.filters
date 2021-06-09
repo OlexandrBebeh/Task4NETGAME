@@ -21,9 +21,6 @@
     <ClCompile Include="ArrayReader.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="TransformFactory.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArrayReader.h">
@@ -42,9 +39,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="TransformFactory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Executor.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ArrayDistinct.h">
