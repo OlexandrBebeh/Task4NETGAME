@@ -145,10 +145,12 @@
   <ItemGroup>
     <ClInclude Include="ArrayDistinct.h" />
     <ClInclude Include="ArrayIntersection.h" />
+    <ClInclude Include="ArrayLongestFilter.h" />
     <ClInclude Include="ArrayPrinter.h" />
     <ClInclude Include="ArrayReader.h" />
     <ClInclude Include="ArraySort.h" />
     <ClInclude Include="ArrayTransformer.h" />
+    <ClInclude Include="Tests.h" />
     <ClInclude Include="TransformFactory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

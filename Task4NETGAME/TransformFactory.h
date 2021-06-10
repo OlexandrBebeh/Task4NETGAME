@@ -3,12 +3,14 @@
 #include "ArraySort.h"
 #include "ArrayIntersection.h"
 #include "ArrayDistinct.h"
+#include "ArrayLongestFilter.h"
 
 
 enum class TransformType {
 	sort,
 	intersect,
-	distinct
+	distinct,
+	longest
 };
 
 
@@ -24,6 +26,9 @@ public:
 		}
 		else if (type == TransformType::distinct) {
 			return new ArrayDistinct<T>();
+		}
+		else if (type == TransformType::longest) {
+			return new ArrayLongestFilter<T>();
 		}
 	};
 };

@@ -3,5 +3,5 @@
 template <class T>
 class ArrayTransformer {
 public:
-	virtual std::vector<std::vector<int>> transform(std::vector<T>& arrays) = 0;
+	virtual std::vector<T> transform(std::vector<T>& arrays) = 0;
 };

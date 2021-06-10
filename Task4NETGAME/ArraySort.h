@@ -6,17 +6,20 @@ class ArraySort : public ArrayTransformer<T> {
 	std::function<bool(int, int)> func = [](int a, int b) {return a < b; };
 
 	void heapify(T& arr, int size, int index) {
-		auto largest = arr.begin() + index;
+		auto largest = arr.begin();
+		std::advance(largest, index);
 		int i = index;
 		if (index * 2 + 1 < size) {
-			auto left = arr.begin() + index * 2 + 1;
+			auto left = arr.begin();
+			std::advance(left,index * 2 + 1);
 			if (func(*largest, *left)) {
 				largest = left;
 				i = index * 2 + 1;
 			}
 		}
 		if (index * 2 + 2 < size) {
-			auto right = arr.begin() + index * 2 + 2;
+			auto right = arr.begin();
+			std::advance(right, index * 2 + 2);
 			if (func(*largest, *right)) {
 				largest = right;
 				i = index * 2 + 2;
@@ -24,28 +27,33 @@ class ArraySort : public ArrayTransformer<T> {
 		}
 
 		if (i != index) {
-			std::iter_swap(largest, arr.begin() + index);
+			auto iter = arr.begin();
+			std::advance(iter, index);
+			std::iter_swap(largest, iter);
 			heapify(arr, size, i);
 		}
 	};
 	void heapify(T& arr, int index) {
 		heapify(arr, arr.size(), index);
 	};
-	std::vector<int> heapSort(T arr) {
+	T heapSort(T arr) {
 		for (int i = arr.size() / 2 - 1; i >= 0; i--) {
 			heapify(arr, i);
 		}
 		for (int i = arr.size() - 1; i >= 0; i--) {
-			std::iter_swap(arr.begin(), arr.begin() + i);
+			auto iter = arr.begin();
+			std::advance(iter, i);
+			std::iter_swap(arr.begin(), iter);
 			heapify(arr, i, 0);
 		}
 		return arr;
 	};
 public:
-	std::vector<std::vector<int>> transform(std::vector<T>& arrays) {
-		std::vector<std::vector<int>> temp;
+	std::vector<T> transform(std::vector<T>& arrays) {
+		std::vector<T> temp;
 		for (int i = 0; i < arrays.size(); i++) {
-			temp.push_back(heapSort(arrays[i]));
+			T sorted = heapSort(arrays[i]);
+			temp.push_back(sorted);
 		}
 		return temp;
 	}

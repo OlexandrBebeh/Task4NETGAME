@@ -17,17 +17,17 @@ class ArrayIntersection : public ArrayTransformer<T> {
 		}
 		return true;
 	};
-	std::vector<int> intersect(std::vector<T> arrays) {
-		std::vector<int> temp;
+	T intersect(std::vector<T> arrays) {
+		T temp;
 
 		for (auto iter = arrays[0].begin(); iter != arrays[0].end(); iter++) {
-			if (inall(arrays, *iter)) temp.push_back(*iter);
+			if (inall(arrays, *iter) && !contains(temp, *iter)) temp.insert(temp.end(),*iter);
 		}
 		return temp;
 	};
 public:
-	std::vector<std::vector<int>> transform(std::vector<T>& arrays) {
-		std::vector<std::vector<int>> temp;
+	std::vector<T> transform(std::vector<T>& arrays) {
+		std::vector<T> temp;
 		temp.push_back(intersect(arrays));
 		return temp;
 	}
