@@ -19,8 +19,9 @@ std::vector<std::vector<int>> ArrayReader::readArrays() {
 		temp.push_back(std::vector<int>());
 
 		for (int i = 0; i < str.size(); i++) {
-			if (std::isdigit(str[i])) {
+			if (std::isdigit(str[i]) || str[i] == '-') {
 				flag = i;
+				i++;
 				for (; i < str.size(); i++) {
 					if (!std::isdigit(str[i])) {
 						temp[arraysSize].push_back(std::stoi(str.substr(flag, i)));

@@ -3,7 +3,7 @@
 #include "TransformFactory.h"
 #include "ArrayPrinter.h"
 #include <list>
-#include <deque >
+#include <deque>
 typedef std::list<int> intlist;
 typedef std::deque <int> intdeque;
 class Tests {
@@ -75,20 +75,23 @@ class Tests {
 	}
 	void testIntersect() {
 		std::vector<intdeque> deq;
+
 		deq.push_back(intdeque{ 1,2,3,4,4,5,5,6,6,7,8,9,10,11,11,11,11,11 });
 		deq.push_back(intdeque{ 12,12,12,12,12,13,6,7,11,2 });
 		deq.push_back(intdeque{ 14,6,7,11,4 });
-		ArrayTransformer<intdeque>* trIntersect = TransformFactory<intdeque>::getTransformer(TransformType::intersect);
 
+		ArrayTransformer<intdeque>* trIntersect = TransformFactory<intdeque>::getTransformer(TransformType::intersect);
 		std::vector<intdeque> temp = trIntersect->transform(deq);
+
 		if (!same(temp[0], { 6, 7, 11 }))
 			std::cout << "Program work incorect: intersect\n";
+
+
 		ArrayTransformer<intdeque>* trLongest = TransformFactory<intdeque>::getTransformer(TransformType::longest);
 
 		temp = trLongest->transform(deq);
-		ArrayPrinter::printArrays(temp);
 		temp = trIntersect->transform(temp);
-		ArrayPrinter::printArrays(temp);
+
 		if (!same(temp[0], { 2, 6, 7, 11 }))
 			std::cout << "Program work incorect: intersect\n";
 	}
